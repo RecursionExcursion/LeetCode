@@ -1,11 +1,9 @@
-import java.util.Arrays;
-
 public class ExcelSheetColumnNumber {
     public static void main(String[] args) {
 
         String column = "ABCD";
 
-        System.out.println(titleToNumber2(column));
+        System.out.println(titleToNumber(column));
 
     }
 
@@ -21,16 +19,5 @@ public class ExcelSheetColumnNumber {
         }
 
         return titleValue;
-    }
-
-    public static int titleToNumber2(String columnTitle) {
-        return Arrays.stream(new StringBuilder(columnTitle).reverse().toString().split(""))
-                     .map(letter -> {
-                         int charValueBaseOne = Character.getNumericValue(letter.charAt(0)) - 9;
-                         int charIndex = Math.abs(columnTitle.indexOf(letter) - (columnTitle.length() - 1));
-                         return charValueBaseOne * Math.pow(26, charIndex);
-                     })
-                     .map(Double::intValue)
-                     .reduce(0, Integer::sum);
     }
 }
