@@ -1,4 +1,4 @@
-package util;
+package multi_file_problems.ImplementStackUsingQueues;
 
 import java.util.LinkedList;
 import java.util.Queue;

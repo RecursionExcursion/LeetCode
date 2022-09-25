@@ -1,4 +1,4 @@
-import util.MyStack;
+package multi_file_problems.ImplementStackUsingQueues;
 
 public class ImplementStackUsingQueues {
     public static void main(String[] args) {
