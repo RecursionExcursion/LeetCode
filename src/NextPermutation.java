@@ -8,8 +8,8 @@ public class NextPermutation {
         int[] i4 = {1, 2};
         int[] i5 = {2, 3, 1};
         int[] i6 = {5, 4, 7, 5, 3, 2};
-        int[] i7 = {1,5,1};
-        int[] i8 = {2,2,7,5,4,3,2,2,1};
+        int[] i7 = {1, 5, 1};
+        int[] i8 = {2, 2, 7, 5, 4, 3, 2, 2, 1};
 
         nextPermutation(i8);
         nextPermutation(i7);
@@ -34,31 +34,31 @@ public class NextPermutation {
 
     public static void nextPermutation(int[] nums) {
 
-
+        //Get Pivot
         int i = nums.length - 1;
         while (i > 1 && nums[i] <= nums[i - 1]) {
             i--;
         }
-         i = Math.max(i - 1, 0);
 
+        i = Math.max(i - 1, 0);
+
+        //Swap pivot with next largest following number
         int nextSmallest = Integer.MAX_VALUE;
         int nextSmallestIndex = -1;
-
         for (int j = i + 1; j < nums.length; j++) {
             if (nums[j] > nums[i]) {
                 nextSmallest = Math.min(nums[j], nextSmallest);
                 nextSmallestIndex = j;
             }
         }
+        //Return sorted array if pivot is < 1, reverse suffix after pivot, otherwise.
         if (nextSmallestIndex < 0) {
             Arrays.sort(nums);
         } else {
             int help = nums[i];
             nums[i] = nums[nextSmallestIndex];
             nums[nextSmallestIndex] = help;
-
             if (++i != nums.length - 1) {
-
                 for (int z = 0; z < (nums.length - i) / 2; z++) {
                     int helper = nums[i + z];
                     nums[i + z] = nums[nums.length - 1 - z];
