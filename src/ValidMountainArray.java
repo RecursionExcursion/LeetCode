@@ -1,4 +1,4 @@
-public class ValidMoutainArray {
+public class ValidMountainArray {
     public static void main(String[] args) {
         System.out.println(validMountainArray(new int[]{2, 1}));
         System.out.println(validMountainArray(new int[]{3, 5, 5}));
