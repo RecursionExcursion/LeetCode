@@ -49,7 +49,7 @@ public class CountPrimes {
 
         int c = 0;
         for (boolean b : isNotPrime) if (!b) c++;
-        return c-2;
+        return c - 2;
     }
 
     private static int countPrimes4(int n) {
@@ -75,7 +75,6 @@ public class CountPrimes {
 
     private static int countPrimes3(int n) {
 
-
         int num = n % 2 == 0 ? n - 1 : n - 2;
 
         List<Integer> primes = new ArrayList<>();
@@ -90,19 +89,14 @@ public class CountPrimes {
                     break;
                 }
             }
-
             if (isPrimeTime) primes.add(i);
         }
-
-
         return primes.size();
-
     }
 
     private static int countPrimes2(int n) {
 
         int count = 0;
-
         int num = n % 2 == 0 ? n - 1 : n - 2;
 
         for (int i = 3; i <= num; i += 2) {
@@ -116,10 +110,7 @@ public class CountPrimes {
             if (isPrimeTime) count++;
         }
         if (n > 2) count++;
-
-
         return count;
-
     }
 
     private static int countPrimes1(int n) {
@@ -135,15 +126,11 @@ public class CountPrimes {
             }
         }
 
-
         if (n > 2) {
             count++;
-            if (n > 3) {
-                count++;
-            }
+            if (n > 3) count++;
         }
 
         return count;
-
     }
 }
