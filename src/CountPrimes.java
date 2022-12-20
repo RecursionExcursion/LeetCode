@@ -35,10 +35,13 @@ public class CountPrimes {
 
         if (n < 3) return 0;
 
+        int numOfPrimes = 0;
+
         boolean[] isNotPrime = new boolean[n];
 
-        for (int i = 2; i < n - 1; i++) {
+        for (int i = 2; i <= n - 1; i++) {
             if (!isNotPrime[i]) {
+                numOfPrimes++;
                 int x = i;
                 while (x < n) {
                     x += i;
@@ -46,10 +49,7 @@ public class CountPrimes {
                 }
             }
         }
-
-        int c = 0;
-        for (boolean b : isNotPrime) if (!b) c++;
-        return c - 2;
+        return numOfPrimes;
     }
 
     private static int countPrimes4(int n) {
