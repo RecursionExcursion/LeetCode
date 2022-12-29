@@ -1,5 +1,6 @@
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 
 public class DuplicateZeros {
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class DuplicateZeros {
     }
 
     private static void duplicatedZeros(int[] arr) {
-        ArrayDeque<Integer> intDeque = new ArrayDeque<>();
+        Deque<Integer> intDeque = new ArrayDeque<>();
 
         for (int i = 0; i < arr.length && intDeque.size() < arr.length; i++) {
             intDeque.add(arr[i]);
