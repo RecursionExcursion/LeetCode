@@ -62,34 +62,34 @@ public class ValidSudoku {
     private static boolean isValidSudoku(char[][] board) {
 
         Set<Character> rowSet = new HashSet<>();
-        List<Set<Character>> colSets = new ArrayList<>(9);
+        Set<Character> colSet = new HashSet<>();
         List<Set<Character>> boxSets = new ArrayList<>(3);
 
-        while (colSets.size() < 9) colSets.add(new HashSet<>());
         while (boxSets.size() < 3) boxSets.add(new HashSet<>());
 
-        for (int r = 0; r < board.length; r++) {
+        for (int r = 0; r < 9; r++) {
 
             rowSet.clear();
+            colSet.clear();
 
             if (r % 3 == 0) {
                 boxSets.forEach(Set::clear);
             }
 
-            for (int c = 0; c < board[r].length; c++) {
+            for (int c = 0; c < 9; c++) {
 
-                char n = board[r][c];
+                char nRow = board[r][c];
+                char nCol = board[c][r];
 
-                if (canAddToCharSet(n, rowSet)) return false;
-
-                if (canAddToCharSet(n, colSets.get(c))) return false;
+                if (canAddToCharSet(nRow, rowSet)) return false;
+                if (canAddToCharSet(nCol, colSet)) return false;
 
                 if (c < 3) {
-                    if (canAddToCharSet(n, boxSets.get(0))) return false;
+                    if (canAddToCharSet(nRow, boxSets.get(0))) return false;
                 } else if (c < 6) {
-                    if (canAddToCharSet(n, boxSets.get(1))) return false;
+                    if (canAddToCharSet(nRow, boxSets.get(1))) return false;
                 } else {
-                    if (canAddToCharSet(n, boxSets.get(2))) return false;
+                    if (canAddToCharSet(nRow, boxSets.get(2))) return false;
                 }
             }
         }
