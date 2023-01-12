@@ -12,59 +12,6 @@ public class RotateImage {
         System.out.println(Arrays.deepToString(matrix2));
     }
 
-//    public static void rotate(int[][] matrix) {
-//
-//        int sizeOfSide = matrix.length;
-//
-//        ArrayDeque<Integer> top = new ArrayDeque<>(sizeOfSide);
-//        ArrayDeque<Integer> right = new ArrayDeque<>(sizeOfSide);
-//        ArrayDeque<Integer> bottom = new ArrayDeque<>(sizeOfSide);
-//        ArrayDeque<Integer> left = new ArrayDeque<>(sizeOfSide);
-//
-//
-//        for (int i = 0; i < sizeOfSide; i++) {
-//            for (int j = 0; j < sizeOfSide; j++) {
-//                if (i == 0) {
-//                    top.add(matrix[i][j]);
-//                }
-//                if (i == sizeOfSide - 1) {
-//                    bottom.push(matrix[i][j]);
-//                }
-//                if (j == 0) {
-//                    left.push(matrix[i][j]);
-//                }
-//                if (j == sizeOfSide - 1) {
-//                    right.add(matrix[i][j]);
-//                }
-//            }
-//        }
-//
-//        int r = 0, c = 0;
-//        //Left to top
-//        while (c < sizeOfSide) {
-//            matrix[0][c++] = left.pop();
-//        }
-//
-//        //top to right
-//        while (r < sizeOfSide) {
-//            matrix[r++][sizeOfSide - 1] = top.pop();
-//        }
-//
-//        --c;
-//        //right to bottom
-//        while (c >= 0) {
-//            matrix[sizeOfSide - 1][c--] = right.pop();
-//        }
-//
-//        --r;
-//        //bottom to left
-//        while (r >= 0) {
-//            matrix[r--][0] = bottom.pop();
-//        }
-//
-//
-//    }
-
     public static void rotate(int[][] matrix) {
 
         int sizeOfSide = matrix.length;
