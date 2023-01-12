@@ -18,13 +18,11 @@ public class RotateImage {
 
         ArrayDeque<Integer> columnDQ = new ArrayDeque<>();
 
-
         for (int i = 0; i < sizeOfSide; i++) {
             for (int j = 0; j < sizeOfSide; j++) {
                 columnDQ.push(matrix[j][i]);
             }
         }
-
 
         for (int i = sizeOfSide-1; i >= 0; i--) {
             for (int j = 0; j < sizeOfSide; j++) {
