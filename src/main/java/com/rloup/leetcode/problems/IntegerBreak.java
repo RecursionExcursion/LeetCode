@@ -24,14 +24,13 @@ public class IntegerBreak {
         return IntStream.range(n / 2, (int) (n * 1.5))
                         .mapToObj(i -> IntStream.range(1, i)
                                                 .filter(j -> i % j == 0)
-                                                .mapToDouble(j -> {
-                                                    double pow = Math.pow(j, ((double) i / j - 1));
+                                                .mapToObj(j -> {
+                                                    int pow = (int) Math.pow(j, ((double) i / j - 1));
                                                     int c = j + n - i, lastMult = c == 0 ? 1 : c;
                                                     return lastMult > 0 ? pow * lastMult : pow / lastMult;
                                                 }))
-                        .map(s -> (int) s.max().orElse(0))
+                        .map(s -> s.max(Integer::compare).orElse(-1))
                         .max(Double::compare)
-                        .orElse(0);
-
+                        .orElse(-1);
     }
 }
