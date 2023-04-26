@@ -18,14 +18,13 @@ public class NumberOfDifferentIntegersInAString {
             if (c >= 48 && c <= 58) {
                 if (start == -1) start = i;
                 end = i;
-            } else {
-                if (start != -1) {
-                    String ss = word.substring(start, end + 1);
-                    while (ss.startsWith("0")) ss = ss.substring(1);
-                    numsAsStrings.add(ss);
-                    start = -1;
-                    end = -1;
-                }
+            } else if (start != -1) {
+                String ss = word.substring(start, end + 1);
+                while (ss.startsWith("0")) ss = ss.substring(1);
+                numsAsStrings.add(ss);
+                start = -1;
+                end = -1;
+
             }
         }
         if (start != -1) {
