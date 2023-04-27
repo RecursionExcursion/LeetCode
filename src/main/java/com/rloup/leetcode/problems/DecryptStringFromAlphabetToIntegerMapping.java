@@ -9,7 +9,7 @@ public class DecryptStringFromAlphabetToIntegerMapping {
         Stack<Integer> list = new Stack<>();
 
         char[] charArr = s.toCharArray();
-        for (int i = charArr.length - 1; i >= 0; ) {
+        for (int i = charArr.length - 1; i >= 0;) {
             if (charArr[i] == '#') {
                 list.push(Integer.parseInt(s.substring(i - 2, i)));
                 i -= 3;
