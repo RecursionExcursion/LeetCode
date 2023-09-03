@@ -12,6 +12,7 @@ public class NumWaterBottles {
            drinkWater();
            exchangeBottles(numExchange);
         }
+        System.out.println();
         return drank;
     }
 
