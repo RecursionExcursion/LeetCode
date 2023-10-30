@@ -42,7 +42,7 @@ public class SwapNodesInPairs {
 //
 //        return listNodes.get(0);
 //    }
-    public ListNode swapPairs(ListNode head) {`
+    public ListNode swapPairs(ListNode head) {
         if (head == null) {
             return null;
         }
